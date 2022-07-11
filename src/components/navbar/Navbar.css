@@ -1,0 +1,136 @@
+.app__navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 100%; */
+  padding: 0.5rem 1.5rem;
+
+  background: rgba(255, 255, 255, 0.28);
+
+  z-index: -1;
+}
+.app__navbar-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+.app__navbar-logo h3 {
+  color: var(--accent-color);
+  font-weight: 900;
+}
+.app__navbar-logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  margin-right: 0.3rem;
+}
+.app__navbar-links {
+  flex: 1;
+  list-style: none;
+  display: none;
+}
+.app__navbar-mobile {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  position: relative;
+}
+
+@media screen and (min-width: 640px) {
+  .app__navbar-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .app__navbar-link-item {
+    margin-right: 2rem;
+  }
+  .app__navbar-mobile {
+    display: none;
+  }
+}
+
+.app__navbar-mobile svg {
+  width: 70%;
+  height: 70%;
+  color: var(--accent-color);
+}
+.app__navbar-mobile-links {
+  position: fixed;
+  top: 66px;
+  right: 0;
+  left: 0;
+  padding-top: 1rem;
+
+  height: 48%;
+
+  z-index: 1;
+  
+  background: url("../../assets/cloud.webp");
+  background-position: center;
+  background-repeat: repeat;
+  object-fit: cover;
+}
+.app__navbar-mobile-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 50%;
+}
+.app__navbar-mobile-links ul {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.app__navbar-mobile-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  width: 45%;
+  list-style: none;
+  text-transform: uppercase;
+
+  color: #fff;
+}
+
+.app__navbar-mobile-link ul,
+img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 45%;
+  height: 100%;
+}
+.app__navbar-mobile-links img {
+  background: #fff;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 600px) {
+  .app__navbar-mobile-link ul,
+  img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 30%;
+    height: 100%;
+  }
+}

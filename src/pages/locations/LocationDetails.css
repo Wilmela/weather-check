@@ -1,0 +1,72 @@
+.app__location {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1rem 5rem 1rem;
+}
+
+.app__location-btn {
+  padding: 0.5rem;
+  text-decoration: none;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+.app__location-btn p {
+  width: 70px;
+  padding: 0.5rem;
+
+  border-radius: 0.3rem;
+  color: #fff;
+  background: var(--accent-color);
+}
+.app__info {
+  width: 100%;
+  padding: 1rem;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.app__info-img {
+  border-radius: 0.5rem;
+  background: var(--accent-color);
+
+  margin: 0.2rem 0rem;
+  padding: 1rem;
+}
+.app__info-img p {
+  color: #fff;
+}
+
+.app__location-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.app__location-card-item {
+  background:rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(4px);
+  border-radius: 0.7rem;
+  margin: 1rem;
+  padding: 1rem;
+
+  width: 450px;
+}
+.app__location-charts{
+  width: 450px;
+}
+
+@media screen and (min-width: 768px) {
+ .app__location-body{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+}

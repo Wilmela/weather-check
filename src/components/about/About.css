@@ -1,0 +1,25 @@
+.app__about{
+    width:100%;
+    flex: 1;
+    padding: .8rem 2rem 5rem 2rem;
+}
+img{
+    width: 200px;
+    height: 200px;
+
+    border-radius: 50%;
+    background: #fff;
+}
+.app__about-developer{
+    margin: 1rem 0rem;
+}
+p, h3, h4, h6, ol, li{
+    color: var(--secondary-color);
+}
+
+.app__about-socials{
+    margin-top: 1rem;
+}
+a{
+    margin: 0rem .8rem;
+}

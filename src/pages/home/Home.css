@@ -1,0 +1,16 @@
+.app__home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.app__home-items {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .app__home-items {
+    width: 85%;
+  }
+}
