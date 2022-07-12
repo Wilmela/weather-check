@@ -14,12 +14,13 @@ const Links = ({ title, className, handleClick , page}) => {
       onClick={handleClick}
       style={{
         textDecoration: "none",
-        color: "#103C77",
         textTransform: "uppercase",
         fontWeight: 900,
       }}
     >
-      <li className={className}><p>{title}</p></li>
+      <li className={className}>
+        <p style={{ color: "#0D356A" }}>{title}</p>
+      </li>
     </Link>
   );
 };

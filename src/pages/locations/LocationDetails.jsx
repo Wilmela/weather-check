@@ -11,7 +11,7 @@ const Info = ({ detailImage, detail }) => {
   return (
     <div className="app__flex">
       <div className="app__flex-col" style={{ width: "50%" }}>
-        <div className="app__info-img app__flex">
+        <div className="app__info-item app__flex">
           <p>{detailImage} </p>
         </div>
       </div>
@@ -30,7 +30,7 @@ const LocationDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const toDegreeCelsius = (fe) => {
-    return `${Math.floor(((fe - 32) * 5) / 9).toFixed(2)} ˚C`;
+    return `${Math.floor((fe - 32) * (5 / 9)).toFixed(2)} ˚C`;
   };
 
   useEffect(() => {
@@ -62,12 +62,13 @@ const LocationDetails = () => {
   return (
     <div className="app__location">
       <Link to="/" className="app__location-btn">
-        <motion.p 
-          whileInView={{y:[-100,0]}}
-          transition={{duration: 0.5}}
+        <motion.p
+          whileInView={{ y: [-100, 0] }}
+          transition={{ duration: 0.5 }}
           className="app__flex"
         >
-        Home</motion.p>
+          Home
+        </motion.p>
       </Link>
 
       <div className="app__location-body">
@@ -89,7 +90,7 @@ const LocationDetails = () => {
                   {data?.name}
                 </h2>
                 <Info
-                  detailImage="Temp"
+                  detailImage="Temperature"
                   detail={toDegreeCelsius(data?.main?.temp)}
                 />
                 <Info
@@ -112,15 +113,18 @@ const LocationDetails = () => {
         )}
 
         {forecasts?.list?.slice(0, 5).map((forecast, i) => {
-        return (
-          <Charts
-            key={i}
-            title={forecast?.dt_txt}
-            info={[toDegreeCelsius(forecast?.main?.temp), forecast?.main?.humidity, forecast?.main?.pressure]}
-          />
-        );
-      })}
-     
+          return (
+            <Charts
+              key={i}
+              title={forecast?.dt_txt}
+              info={[
+                toDegreeCelsius(forecast?.main?.temp),
+                forecast?.main?.humidity,
+                forecast?.main?.pressure,
+              ]}
+            />
+          );
+        })}
       </div>
     </div>
   );

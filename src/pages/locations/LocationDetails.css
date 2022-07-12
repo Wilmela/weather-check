@@ -32,14 +32,14 @@
   justify-content: space-evenly;
   align-items: center;
 }
-.app__info-img {
+.app__info-item {
   border-radius: 0.5rem;
   background: var(--accent-color);
 
   margin: 0.2rem 0rem;
   padding: 1rem;
 }
-.app__info-img p {
+.app__info-item p {
   color: #fff;
 }
 

@@ -2,13 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* width: 100%; */
+  
   padding: 0.5rem 1.5rem;
-
   background: rgba(255, 255, 255, 0.28);
 
   z-index: -1;
 }
+
 .app__navbar-logo {
   display: flex;
   justify-content: flex-start;
@@ -16,10 +16,12 @@
   cursor: pointer;
   text-decoration: none;
 }
+
 .app__navbar-logo h3 {
   color: var(--accent-color);
   font-weight: 900;
 }
+
 .app__navbar-logo img {
   width: 50px;
   height: 50px;
@@ -27,11 +29,13 @@
   background: var(--accent-color);
   margin-right: 0.3rem;
 }
+
 .app__navbar-links {
   flex: 1;
   list-style: none;
   display: none;
 }
+
 .app__navbar-mobile {
   width: 35px;
   height: 35px;
@@ -64,6 +68,7 @@
   height: 70%;
   color: var(--accent-color);
 }
+
 .app__navbar-mobile-links {
   position: fixed;
   top: 66px;
@@ -80,6 +85,7 @@
   background-repeat: repeat;
   object-fit: cover;
 }
+
 .app__navbar-mobile-link {
   display: flex;
   flex-direction: column;
@@ -88,6 +94,7 @@
 
   width: 50%;
 }
+
 .app__navbar-mobile-links ul {
   display: flex;
   justify-content: center;
@@ -102,9 +109,6 @@
 
   width: 45%;
   list-style: none;
-  text-transform: uppercase;
-
-  color: #fff;
 }
 
 .app__navbar-mobile-link ul,
@@ -117,6 +121,7 @@ img {
   width: 45%;
   height: 100%;
 }
+
 .app__navbar-mobile-links img {
   background: #fff;
   border-radius: 50%;
