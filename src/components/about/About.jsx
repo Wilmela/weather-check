@@ -24,49 +24,51 @@ const About = () => {
       <p>
         This app was developed for educational purposes. It is absolutely free.
       </p>
-      <h4>Library, Dependencies and API used include:</h4>
-      <motion.ol
-        type="1"
-        whileInView={{ opacity: [0, 1] }}
-        transition={{ duration: 0.5 }}
-      >
-        <li>React</li>
-        <li>React icons</li>
-        <li>React-router-dom</li>
-        <li>css</li>
-        <li>React-chartjs-2 and Chart.js</li>
-        <li>framer-motion</li>
-        <li>
-          Open weather map api from
+      <div className="app__about-list">
+        <h4>Library, Dependencies and API used include:</h4>
+        <motion.ol
+          type="1"
+          whileInView={{ opacity: [0, 1] }}
+          transition={{ duration: 0.5 }}
+        >
+          <li>React</li>
+          <li>React icons</li>
+          <li>React-router-dom</li>
+          <li>css</li>
+          <li>React-chartjs-2 and Chart.js</li>
+          <li>framer-motion</li>
+          <li>
+            Open weather map api
+            <a
+              href="https://openweathermap.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              here
+            </a>
+          </li>
+        </motion.ol>
+        <motion.div
+          className="app__about-socials app__flex"
+          whileInView={{ y: [-10, 0] }}
+          transition={{ duration: 0.5 }}
+        >
           <a
-            href="https://rapidapi.com/hub"
+            href="https://github.com/Wilmela"
             target="_blank"
             rel="noopener noreferrer"
           >
-            rapidapi
+            <FaGithub size={28} />
           </a>
-        </li>
-      </motion.ol>
-      <motion.div
-        className="app__about-socials app__flex"
-        whileInView={{ y: [-10, 0] }}
-        transition={{ duration: 0.5 }}
-      >
-        <a
-          href="https://github.com/Wilmela"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaGithub size={28} />
-        </a>
-        <a
-          href="https://twitter.com/tunizzle"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaTwitter size={28} />
-        </a>
-      </motion.div>
+          <a
+            href="https://twitter.com/tunizzle"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaTwitter size={28} />
+          </a>
+        </motion.div>
+      </div>
     </div>
   );
 };

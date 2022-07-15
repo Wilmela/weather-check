@@ -3,9 +3,8 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Charts from "../../components/chart/Charts";
+import { toDegreeCelsius } from '../../utils/helper';
 import "./LocationDetails.css";
-
-import { fetchWeatherInfo, options } from "../../api";
 
 const Info = ({ detailImage, detail }) => {
   return (
@@ -29,16 +28,11 @@ const LocationDetails = () => {
   const [forecasts, setForecasts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const toDegreeCelsius = (fe) => {
-    return `${Math.floor((fe - 32) * (5 / 9)).toFixed(2)} ˚C`;
-  };
 
   useEffect(() => {
     const fetchData = async () => {
-      const info = await fetchWeatherInfo(
-        `https://community-open-weather-map.p.rapidapi.com/weather?q=${name}`,
-        options
-      );
+      const res = await fetch( `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${process.env.REACT_APP_OW_KEY}` );
+      const info = await res.json();
       setIsLoading(true);
       setData(info);
       setIsLoading(false);
@@ -49,11 +43,10 @@ const LocationDetails = () => {
 
   useEffect(() => {
     const fetchForecastData = async () => {
-      const data = await fetchWeatherInfo(
-        `https://community-open-weather-map.p.rapidapi.com/forecast?q=${name}`,
-        options
+      const res = await fetch(
+        `https://api.openweathermap.org/data/2.5/forecast?q=${name}&appid=${process.env.REACT_APP_OW_KEY}`
       );
-      console.log(data);
+      const data = await res.json();
       setForecasts(data);
     };
     fetchForecastData();
@@ -80,24 +73,18 @@ const LocationDetails = () => {
               transition={{ duration: 0.5 }}
             >
               <div className="app__flex-col">
-                <h2
-                  style={{
-                    marginTop: ".5rem",
-                    marginBottom: "1rem",
-                    color: "#021430",
-                  }}
-                >
+                <h2 style={{ marginTop: ".5rem", marginBottom: "1rem", color: "#021430", }} >
                   {data?.name}
                 </h2>
                 <Info
                   detailImage="Temperature"
-                  detail={toDegreeCelsius(data?.main?.temp)}
+                  detail={`${toDegreeCelsius(data?.main?.temp)}˚C`}
                 />
                 <Info
                   detailImage="Feels_Like"
-                  detail={toDegreeCelsius(data?.main?.feels_like)}
+                  detail={`${toDegreeCelsius(data?.main?.feels_like)}˚C`}
                 />
-                <Info detailImage="Humidity" detail={data?.main?.humidity} />
+                <Info detailImage="Humidity" detail={`${data?.main?.humidity}%`}/>
                 <Info detailImage="Pressure" detail={data?.main?.pressure} />
                 {data?.weather?.map((info, i) => (
                   <div key={i} style={{ width: "100%" }}>
@@ -112,16 +99,12 @@ const LocationDetails = () => {
           <h1>Loading...</h1>
         )}
 
-        {forecasts?.list?.slice(0, 5).map((forecast, i) => {
+        {forecasts?.list?.slice(0, 3).map((forecast, i) => {
           return (
             <Charts
               key={i}
               title={forecast?.dt_txt}
-              info={[
-                toDegreeCelsius(forecast?.main?.temp),
-                forecast?.main?.humidity,
-                forecast?.main?.pressure,
-              ]}
+              info={forecast?.main}
             />
           );
         })}

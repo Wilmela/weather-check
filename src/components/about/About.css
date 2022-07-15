@@ -13,6 +13,14 @@ img{
 .app__about-developer{
     margin: 1rem 0rem;
 }
+.app__about-list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 2rem;
+}
 p, h3, h4, h6, ol, li{
     color: var(--secondary-color);
 }

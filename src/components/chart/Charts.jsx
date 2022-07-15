@@ -1,4 +1,4 @@
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Chart as ChartJs,
   LineElement,
@@ -10,6 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import { toDegreeCelsius } from "../../utils/helper";
 import "./Charts.css";
 
 ChartJs.register(
@@ -27,7 +28,11 @@ const Charts = ({ title, info }) => {
     datasets: [
       {
         label: `Weather forecast for ${title}`,
-        data: info,
+        data: [
+          toDegreeCelsius(info?.temp),
+          toDegreeCelsius(info?.feels_like),
+          info?.pressure,
+        ],
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
@@ -58,11 +63,11 @@ const Charts = ({ title, info }) => {
   };
 
   return (
-    <motion.div 
-    whileInView={{y:[100, 0]}}
-    transition={{duration: 0.5}}
-
-    className="app__chart app__flex-col">
+    <motion.div
+      whileInView={{ y: [100, 0] }}
+      transition={{ duration: 0.5 }}
+      className="app__chart app__flex-col"
+    >
       <Line data={data} options={options} height={200} width={450} />
     </motion.div>
   );
