@@ -1,4 +1,4 @@
-Live Preview f-caster.netlify.app
+Live Preview https://f-caster.netlify.app
 
 # Getting Started with Create React App
 
