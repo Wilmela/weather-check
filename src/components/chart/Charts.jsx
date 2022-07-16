@@ -10,7 +10,6 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import { toDegreeCelsius } from "../../utils/helper";
 import "./Charts.css";
 
 ChartJs.register(
@@ -29,8 +28,8 @@ const Charts = ({ title, info }) => {
       {
         label: `Weather forecast for ${title}`,
         data: [
-          toDegreeCelsius(info?.temp),
-          toDegreeCelsius(info?.feels_like),
+          info?.temp,
+          info?.feels_like,
           info?.pressure,
         ],
         backgroundColor: [
@@ -55,10 +54,6 @@ const Charts = ({ title, info }) => {
       legend: {
         position: "top",
       },
-      // title:{
-      //   display: true,
-      //   text: `Weather forecast for 5 days`
-      // }
     },
   };
 

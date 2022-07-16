@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Charts from "../../components/chart/Charts";
-import { toDegreeCelsius } from '../../utils/helper';
 import "./LocationDetails.css";
 
 const Info = ({ detailImage, detail }) => {
@@ -31,7 +30,7 @@ const LocationDetails = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch( `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${process.env.REACT_APP_OW_KEY}` );
+      const res = await fetch( `https://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric&appid=${process.env.REACT_APP_OW_KEY}` );
       const info = await res.json();
       setIsLoading(true);
       setData(info);
@@ -44,7 +43,7 @@ const LocationDetails = () => {
   useEffect(() => {
     const fetchForecastData = async () => {
       const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${name}&appid=${process.env.REACT_APP_OW_KEY}`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${name}&units=metric&appid=${process.env.REACT_APP_OW_KEY}`
       );
       const data = await res.json();
       setForecasts(data);
@@ -78,14 +77,14 @@ const LocationDetails = () => {
                 </h2>
                 <Info
                   detailImage="Temperature"
-                  detail={`${toDegreeCelsius(data?.main?.temp)}˚C`}
+                  detail={`${data?.main?.temp}˚C`}
                 />
                 <Info
                   detailImage="Feels_Like"
-                  detail={`${toDegreeCelsius(data?.main?.feels_like)}˚C`}
+                  detail={`${data?.main?.feels_like}˚C`}
                 />
                 <Info detailImage="Humidity" detail={`${data?.main?.humidity}%`}/>
-                <Info detailImage="Pressure" detail={data?.main?.pressure} />
+                <Info detailImage="Pressure" detail={`${data?.main?.pressure}hPa`} />
                 {data?.weather?.map((info, i) => (
                   <div key={i} style={{ width: "100%" }}>
                     <Info detailImage="Description" detail={info.description} />
