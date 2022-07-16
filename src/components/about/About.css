@@ -53,3 +53,12 @@ a {
     width: 70%;
   }
 }
+@media screen and (max-width: 768px) {
+  img {
+  width: 150px;
+  height: 150px;
+
+  border-radius: 50%;
+  background: #fff;
+}
+}

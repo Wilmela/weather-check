@@ -45,3 +45,9 @@ input, .app__input-button{
         width:15%
     }
 }
+@media screen and (max-width : 450px) {
+  .app__input-button{
+    display: none;
+  }
+  
+}

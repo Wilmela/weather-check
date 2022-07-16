@@ -63,7 +63,7 @@ const Charts = ({ title, info }) => {
       transition={{ duration: 0.5 }}
       className="app__chart app__flex-col"
     >
-      <Line data={data} options={options} height={200} width={370} />
+      <Line data={data} options={options} height={200} width={350} />
     </motion.div>
   );
 };
