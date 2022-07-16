@@ -53,10 +53,10 @@
   background:rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(4px);
   border-radius: 0.7rem;
-  margin: 1rem;
+  margin: 1rem 0rem 1rem 0rem;
   padding: 1rem;
 
-  width: 450px;
+  width: 370px;
 }
 .app__location-charts{
   width: 450px;
@@ -68,5 +68,8 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+.app__location-card-item {
+  width: 450px;
 }
 }

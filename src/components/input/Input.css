@@ -10,7 +10,7 @@
 input{
     padding: 1rem;
     width: 70%;
-    margin: 3rem 0rem 1rem 0rem;
+    margin: 1rem 0rem 1rem 0rem;
 }
 input:hover{
     background: #f7fbff;
@@ -39,6 +39,7 @@ input, .app__input-button{
 @media screen and (min-width: 768px) {
     input{
         width: 60%;
+        margin-top: 2rem;
     }
     .app__input-button{
         width:15%

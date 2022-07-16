@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 import Charts from "../../components/chart/Charts";
 import "./LocationDetails.css";
 
-const Info = ({ detailImage, detail }) => {
+const Info = ({ title, detail }) => {
   return (
     <div className="app__flex">
       <div className="app__flex-col" style={{ width: "50%" }}>
         <div className="app__info-item app__flex">
-          <p>{detailImage} </p>
+          <p>{title} </p>
         </div>
       </div>
 
@@ -76,19 +76,19 @@ const LocationDetails = () => {
                   {data?.name}
                 </h2>
                 <Info
-                  detailImage="Temperature"
+                  title="Temperature"
                   detail={`${data?.main?.temp}˚C`}
                 />
                 <Info
-                  detailImage="Feels_Like"
+                  title="Feels_Like"
                   detail={`${data?.main?.feels_like}˚C`}
                 />
-                <Info detailImage="Humidity" detail={`${data?.main?.humidity}%`}/>
-                <Info detailImage="Pressure" detail={`${data?.main?.pressure}hPa`} />
+                <Info title="Humidity" detail={`${data?.main?.humidity}%`}/>
+                <Info title="Pressure" detail={`${data?.main?.pressure}hPa`} />
                 {data?.weather?.map((info, i) => (
                   <div key={i} style={{ width: "100%" }}>
-                    <Info detailImage="Description" detail={info.description} />
-                    <Info detailImage="Main" detail={info.main} />
+                    <Info title="Description" detail={info.description} />
+                    <Info title="Main" detail={info.main} />
                   </div>
                 ))}
               </div>
