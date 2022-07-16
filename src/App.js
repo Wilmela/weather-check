@@ -6,7 +6,6 @@ import LocationDetails from "./pages/locations/LocationDetails";
 import PageNotfound from "./pages/notFound/PageNotfound";
 
 const App = () => {
-  
   return (
     <>
       <Navbar />

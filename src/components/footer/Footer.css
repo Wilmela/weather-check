@@ -15,10 +15,3 @@
 p{
   color:rgb(16, 60, 119);
 }
-
-@media screen and (max-width : 450px) {
-  .app__footer{
-    display: none;
-  }
-  
-}
