@@ -1,8 +1,6 @@
 import "./Header.css";
 import { motion } from "framer-motion";
 
-import BG from '../../assets/weather-header.png'
-
 const Header = () => {
   return (
     <div className="app__header">
