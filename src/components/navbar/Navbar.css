@@ -1,20 +1,26 @@
 .app__navbar {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+
   padding: 0.5rem;
   background: rgba(255, 255, 255, 0.28);
 
   z-index: -1;
 }
 
+.title {
+  color: #0d356a;
+  margin-right: 20px;
+}
 .app__navbar-logo {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   cursor: pointer;
   text-decoration: none;
+  margin-bottom: 4px;
 }
 
 .app__navbar-logo h3 {
@@ -60,6 +66,9 @@
   .app__navbar-mobile {
     display: none;
   }
+  .title {
+    color: #4d99e9;
+  }
 }
 
 .app__navbar-mobile svg {
@@ -78,7 +87,7 @@
   height: 48%;
 
   z-index: 1;
-  
+
   background: url("../../assets/cloud.webp");
   background-position: center;
   background-repeat: repeat;

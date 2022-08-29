@@ -11,10 +11,15 @@
   align-items: center;
 
   padding-bottom: 1rem;
-
 }
-h1{
-  font-size: 4rem;
-  color:var(--accent-color);
-  text-shadow: 2px 2px #FAF84F;
+h1 {
+  font-size: 3rem;
+  color: var(--accent-color);
+  text-shadow: 2px 2px #faf84f;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
 }

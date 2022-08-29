@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { HiX, HiMenu } from "react-icons/hi";
 import { motion } from "framer-motion";
 
+import { navLinks } from "../../utils/constants";
+
 import './Navbar.css';
 
 import LOGO from "../../assets/icon.png";
@@ -19,7 +21,7 @@ const Links = ({ title, className, handleClick , page}) => {
       }}
     >
       <li className={className}>
-        <p style={{ color: "#0D356A" }}>{title}</p>
+        <p className="title">{title}</p>
       </li>
     </Link>
   );
@@ -36,10 +38,7 @@ const Navbar = () => {
       </Link>
 
       <ul className="app__navbar-links">
-        {[
-          { title: "Home", page: "/" },
-          { title: "About", page: "/about" },
-        ].map((item, i) => (
+        {navLinks.map((item, i) => (
           <div className="app__navbar-link" key={item.title}>
             <Links
               title={item.title}
@@ -56,6 +55,8 @@ const Navbar = () => {
         ) : (
           <HiMenu onClick={() => setToggle(true)} />
         )}
+
+        {/* mobile */}
         <div>
           {toggle && (
             <motion.div
@@ -65,10 +66,7 @@ const Navbar = () => {
             >
               <ul>
                 <div className="app__navbar-mobile-link">
-                  {[
-                    { title: "Home", page: "/" },
-                    { title: "About", page: "/about" },
-                  ].map((item) => (
+                  {navLinks.map((item) => (
                     <div key={item.page}>
                       <Links
                         title={item.title}
@@ -83,8 +81,6 @@ const Navbar = () => {
             </motion.div>
           )}
         </div>
-
-        <div></div>
       </div>
     </nav>
   );

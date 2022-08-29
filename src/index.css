@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-:root{
-    --primary-color : #D3E4FA;
-    --secondary-color: #021430;
-    --accent-color: #4D99E9;
+:root {
+  --primary-color: #d3e4fa;
+  --secondary-color: #021430;
+  --accent-color: #4d99e9;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -11,20 +14,33 @@
   margin: 0;
   box-sizing: border-box;
 }
-body {
-  background: var(--primary-color);
-  font-family: 'Poppins', sans-serif;
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-track {
+  color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  color: #ccc;
 }
 
-.app__flex{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  background: var(--primary-color);
+  font-family: "Poppins", sans-serif;
+
+  /* border: 5px solid blue; */
 }
-.app__flex-col{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+.app__flex {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.app__flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+

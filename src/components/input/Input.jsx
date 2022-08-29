@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Input.css";
 
-const Input = ({ setIsFocused }) => {
+const Input = () => {
   const [name, setName] = useState("");
   const navigate = useNavigate();
 
@@ -29,7 +29,6 @@ const Input = ({ setIsFocused }) => {
         placeholder="Enter the name of a city..."
         onKeyPress={onEnterKeyPressed}
         onChange={(e) => setName(e.target.value)}
-        onFocus={() => setIsFocused(true)}
         required
       />
       <Link to={`/location/${name}`} className="app__input-button">

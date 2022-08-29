@@ -2,12 +2,12 @@ import React from "react";
 import { Header, Input } from "../../components";
 import "./Home.css";
 
-const Home = ({ setIsFocused }) => {
+const Home = () => {
   return (
     <div className="app__home">
       <div className="app__home-items">
         <Header />
-        <Input setIsFocused={setIsFocused} />
+        <Input />
       </div>
     </div>
   );

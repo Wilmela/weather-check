@@ -1,9 +1,11 @@
 .app__home {
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 .app__home-items {
   width: 100%;
@@ -11,6 +13,7 @@
 
 @media screen and (min-width: 768px) {
   .app__home-items {
-    width: 85%;
+    width: 65%;
+
   }
 }
