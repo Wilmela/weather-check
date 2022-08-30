@@ -15,7 +15,7 @@ const Info = ({ title, detail }) => {
       </div>
 
       <div className="app__flex-col" style={{ width: "50%", color: "#021430" }}>
-        <h3 style={{ color: "#021430" }}>{detail}</h3>
+        <h4 style={{ color: "#021430" }}>{detail}</h4>
       </div>
     </div>
   );

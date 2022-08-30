@@ -24,7 +24,7 @@
   color: #fff;
   background: var(--accent-color);
 }
-.app__location-body{
+.app__location-body {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -41,11 +41,11 @@
   align-items: center;
 }
 .app__info-item {
-  border-radius: 0.5rem;
+  border-radius: 5px;
   background: var(--accent-color);
 
   margin: 0.2rem 0rem;
-  padding: 1rem;
+  padding: 1rem 0.5rem;
 }
 .app__info-item p {
   color: #fff;
@@ -57,10 +57,9 @@
   justify-content: center;
   align-items: center;
   width: 300px;
- 
 }
 .app__location-card-item {
-  background:rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(4px);
   border-radius: 0.7rem;
   margin: 1rem 0rem 1rem 0rem;
@@ -68,21 +67,21 @@
 
   width: 350px;
 }
-.app__location-charts{
+.app__location-charts {
   width: 450px;
 }
 
 @media screen and (min-width: 768px) {
- .app__location-body{
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.app__location-card-item {
-  width: 450px;
-}
-.app__location-card {
-  width: 40%;
-}
+  .app__location-body {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .app__location-card-item {
+    width: 450px;
+  }
+  .app__location-card {
+    width: 40%;
+  }
 }
